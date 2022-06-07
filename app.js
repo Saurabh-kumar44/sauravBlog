@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var studentRouter = require('./routes/student');//Importing student
 var teacherRouter = require('./routes/teacher');
+var loginRouter = require('./routes/login');//importing login 
+
 
 
 var app = express();
@@ -22,12 +24,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter); //when we don't have folder and still want to rout the it comes to it
 app.use('/users', usersRouter);
 app.use('/student', studentRouter);   //setting student and giving to import
 app.use('/teacher', teacherRouter);
+app.use('/login',loginRouter);//setting up path for login
+app.use('/', indexRouter); //when we don't have folder and still want to rout the it comes to it
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handler//sdssdfasd
 app.use(function(req, res, next) {app.use('/student', studentRouter);   //Routing
   next(createError(404));
 });
