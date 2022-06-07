@@ -8,7 +8,7 @@ console.log("I am fine")
   res.render('login');
 });
 
-//by get
+// using by get
 router.get('/getLogin', function(req, res, next) {
     console.log(req.query);
     // res.render({"name":"himani"});
