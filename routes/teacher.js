@@ -17,11 +17,11 @@ var router = express.Router();
 
 // router.get('/:da/:ta', function(req, res, next) {//intialisinf two var 
 //     // console.log(res.params.da);//
-//     res.json({name:req.params.da+"is and " +req.params.ta+ "is from kcc"});//sending res and print  
+//     res.json({name:req.params.da+" is and " +req.params.ta+ " is from kcc"});//sending res and print  
 //     // res.render('index', { title: 'Express' });
 //   });
 
-// router.get('/:da/:ta', function(req, res, next){//intialisinf two var 
+// router.get('/:da/:ta', function(req, res, next){//intialising two var 
 //     console.log(res.params.da);//apply params
 //     res.json({name:req.params.da+"is and " +req.params.ta+ "is from kcc"});//sending res and print  
     // res.render('index', { title: 'Express' });
@@ -47,11 +47,11 @@ router.get('/:da', function(req, res,) {
 //  res.render('index', { title: req.query.fname});
 // });
 
-router.post('/data', function(req, res, next) {
-  console.log(req.body);//print the req
-  console.log(req.query.lname);
-  // res.json({name:"SHivam beta"}); //send the response to the server basically a (Get request) 
- res.render('index', { title: req.body.fname});
-});
+// router.post('/data', function(req, res, next) {
+//   console.log(req.body);//print the req
+//   console.log(req.query.lname);
+//   // res.json({name:"SHivam beta"}); //send the response to the server basically a (Get request) 
+//  res.render('index', { title: req.body.fname});
+// });
 
 module.exports = router;

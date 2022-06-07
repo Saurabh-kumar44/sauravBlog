@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var studentRouter = require('./routes/student');//Importing student
 var teacherRouter = require('./routes/teacher');
-var loginRouter = require('./routes/login');//importing login 
+var loginRouter = require('./routes/login');//importing login /
 
 
 

@@ -10,10 +10,10 @@ var router = express.Router();
 //   //sdfsdf
 // });
 
-router.get('/:da', function(req, res, next) {
-    //Params used to take variable (teacher/hahah() 
-    res.render('teacher', { title:req.params.da });
-});
+// router.get('/:da', function(req, res, next) {
+//     //Params used to take variable (teacher/hahah() 
+//     res.render('teacher', { title:req.params.da });
+// });
 
 
 module.exports = router;
