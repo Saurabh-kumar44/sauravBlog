@@ -16,10 +16,17 @@ console.log("I am fine")
 //   });
 
   //by post
-  router.post('/getLogin', function(req, res, next) {
-    console.log(req.body);
+  // router.post('/getLogin', function(req, res, next) {
+  //   console.log(req.body);
+  //   // res.render({"name":"himani"});
+  //   res.json({"name":req.body.Ashu});
+  // });
+
+  // rendering email and password by GET
+  router.get('/getLogin', function(req, res) {
+    // console.log(req.query);
     // res.render({"name":"himani"});
-    res.json({"name":req.body.Ashu});
+    res.json({"Email":req.query.email,"Pass":req.query.password});
   });
 
   //by all- used no matter sending by get or post it will hit here
