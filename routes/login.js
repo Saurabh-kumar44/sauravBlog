@@ -1,11 +1,34 @@
 var express = require('express');
 var router = express.Router();
-var modelLogin = require("../model/login") //calling another file or exporting
+
+var modelLogin = require("../model/login") ///callidcvng another file or exporting from login
 router.get('/', function(req, res) {
   modelLogin.a("unkonow")
     res.render('login');
-
   });
+
+//Making connection to mysql
+// setting up host,user,name to sql
+var con = mysql.createConnection({
+ host: "192.168.17.44",
+ user: "root",
+ password: "1234"
+});
+
+
+  router.get('/', function(req, res, next) {
+    console.log("saurav");
+    con.connect(function(err){
+      console.log("HArsh");
+      // if(err) throw err;
+      if(err) throw console.log("err");
+      console.log("Connected");
+    });
+    // modelLogin.a(modelLogin.pandy.name)
+    console.log("himani");
+    res.render('login');
+  });
+
 
 /* GET home page. */
 router.get('/', function(req, res) {
