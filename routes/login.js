@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var modelLogin = require("../model/login") ////callidcvng another file or exporting from login
+var modelLogin = require("../model/login") ////calling another file or exporting from login
 router.get('/', function(req, res) {
   modelLogin.a("unkonow")
     res.render('login');
