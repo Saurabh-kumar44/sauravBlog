@@ -31,6 +31,24 @@ console.log("Butti");
   res.render('login');
 });
 
+//Inserting into mysql DB
+router.post('/getLogin', function(req, res, next) {
+  console.log(req.body)
+  // res.send({"name":"himani"})
+  //res.render('teacher')
+  console.log(req.body.pass)
+  var sql = "INSERT INTO `login` (`email`, `pass`) \
+  VALUES ('"+req.body.Ashu+"', '"+req.body.pass+"');"
+  console.log(sql)
+ con.connect()
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log(result);
+
+    });
+res.json({"Name":req.body})
+});
+
 
 /* GET home page. */
 router.get('/', function(req, res) {
