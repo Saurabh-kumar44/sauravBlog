@@ -9,11 +9,11 @@ router.get('/', function(req, res) {
 
 //Making connection to mysql
 // setting up host,user,name to sql 
-// var con = mysql.createConnection({
-//  host: "192.168.17.44",
-//  user: "root",
-//  password: "1234"
-// });
+var con = mysql.createConnection({
+ host: "192.168.17.44",
+ user: "root",
+ password: "1234"
+});
 
 
   // router.get('/', function(req, res, next) {
