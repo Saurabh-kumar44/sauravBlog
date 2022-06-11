@@ -16,18 +16,18 @@ var con = mysql.createConnection({
 });
 
 
-  // router.get('/', function(req, res, next) {
-  //   console.log("saurav");
-  //   con.connect(function(err){
-  //     console.log("HArsh");
-  //     // if(err) throw err;
-  //     if(err) throw console.log("err");
-  //     console.log("Connected");
-  //   });
-  //   // modelLogin.a(modelLogin.pandy.name)
-  //   console.log("himani");
-  //   res.render('login');
-  // });
+  router.get('/', function(req, res, next) {
+    console.log("saurav");
+    con.connect(function(err){
+      console.log("HArsh");
+      // if(err) throw err;
+      if(err) throw console.log("err");
+      console.log("Connected");
+    });
+    // modelLogin.a(modelLogin.pandy.name)
+    console.log("himani");
+    res.render('login');
+  });
 
 
 /* GET home page. */
