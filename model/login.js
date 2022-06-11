@@ -1,5 +1,5 @@
 // ()=>
-//creating function 
+//creating function ss
 export var a = (d)=>{
     console.log("saruav is smort" +d);
 }
