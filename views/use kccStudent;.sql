@@ -1,6 +1,6 @@
 use kccStudent;
 select * from kccStudent;
-
+-- Creating Table
 CREATE TABLE saurabh (
     PersonID int,
     LastName varchar(255),
