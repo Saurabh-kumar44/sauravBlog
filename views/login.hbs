@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,34 +8,76 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <body>
-    {{!-- <form action="/getLogin" method = "get"> --}}
-    {{!-- renderng by get --}}
-        {{!-- <form action="/login/getLogin" method = "get"> --}}
-        {{!-- by post --}}
-        <form action="/login/getLogin" method = "post">
+    {{!-- <form action="/getLogin" method="get"> --}}
+        {{!-- renderng by get --}}
+        {{!-- <form action="/login/getLogin" method="get"> --}}
+            {{!-- by post --}}
+            <form action="/login/getLogin" method="post">
 
-        <input type="email" name="email" id=""placeholder="email">
-        <input type="password" name="password" id=""placeholder="pass">
-        <input type="submit">
-
-       
-
-    </form>
-     <button class="click">Press me</button>
-     <div id="div1"></div>
-    <script>
-        {{!-- $("button").click(function(){
-    console.log("Apko  mera pranam")
-}); --}}
+                <input type="email" name="email" id="" placeholder="email">
+                <input type="password" name="password" id="" placeholder="pass">
+                <input type="submit">
 
 
-$("button").click(function(){
-  $.ajax({url: "https://api.publicapis.org/entries", success: function(result){
-    {{!-- $("#div1").html(result); --}}
-    console.log(result);
-  }});
-});
-    </script>
+            </form>
+            <button class="click">Press me</button>
+            <table>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Update</td>
+                    <td>Delete</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    {{#data}}
+                    <form action="/login/updateLogin" method="post">
+                        <input type="text" name="id" id="" value="{{id}}"> </td> <br>
+                        <td><input type="text" name="name"  value="{{name}}"> <br>
+                        <td><button type="button" class="btn-update" placeholder id ="{{id}}"="Update">update</button></td>
+                        <td><button type="button" class="btn-Delete" placeholder="Delete" id ="{{id}}>Delete</button></td>
+                        <td><input type="submit"></td>
+                    </form>
+                </tr>
+                {{/data}}
+            </table>
+
+
+            <div id="div1"></div>
+            <script>
+                {
+                    {
+                        {
+                            !--$("button").click(function () {
+                                console.log("Apko  mera pranam")
+                                console.log(event);
+                            }); --}
+                    }
+
+                    $("btn-uptate").click(function () {
+                        console.log("Apko  mera pranam")
+                        console.log(event);
+                    });
+
+                }
+
+
+
+                {
+                    {
+                        !--$("button").click(function () {
+                            $.ajax({
+                                url: "https://api.publicapis.org/entries", success: function (result) {
+                                    { { !--$("#div1").html(result); --} }
+                                    console.log(result);
+                                }
+                            });
+                        }); --}
+                }
+            </script>
 </body>
+
 </html>
