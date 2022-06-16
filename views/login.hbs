@@ -14,14 +14,14 @@
         {{!-- renderng by get --}}
         {{!-- <form action="/login/getLogin" method="get"> --}}
             {{!-- by post --}}
-            <form action="/login/getLogin" method="post">
+            {{!-- <form action="/login/getLogin" method="post">
 
                 <input type="email" name="email" id="" placeholder="email">
                 <input type="password" name="password" id="" placeholder="pass">
                 <input type="submit">
 
 
-            </form>
+            </form> --}}
             <button class="click">Press me</button>
             <table>
                 <tr>
@@ -33,7 +33,7 @@
                 </tr>
 
                 <tr>
-                    {{#data}}
+                    {{!-- {{#data}} --}}
                     <form action="/login/updateLogin" method="post">
                         <input type="text" name="id" id="" value="{{id}}"> </td> <br>
                         <td><input type="text" name="name"  value="{{name}}"> <br>
@@ -42,7 +42,7 @@
                         <td><input type="submit"></td>
                     </form>
                 </tr>
-                {{/data}}
+                {{!-- {{/data}} --}}
             </table>
 
 

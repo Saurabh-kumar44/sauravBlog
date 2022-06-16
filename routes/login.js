@@ -10,6 +10,7 @@ var mysql = require('mysql');
 
 //Making connection to mysql
 // setting up host,user,name to sql 
+con.connect()
 var con = mysql.createConnection({
  host: "192.168.17.44",
  user: "root",
@@ -22,7 +23,7 @@ router.get('/', function(req, res, next) {
   con.connect(function(err) {
       console.log("HARSH")
       if (err) console.log("err");
-      console.log("Connected!");
+      else console.log("Connected!");
     });
   // modelLogin.a(modelLogin.pandy.name)
 console.log("kisna");
