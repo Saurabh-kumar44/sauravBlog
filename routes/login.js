@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var _ = require('underscore');//using underscore
+
 
 var mysql = require('mysql');
 // var modelLogin = require("../model/login") //calling another file or exporting from login
@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
       if (err) console.log("err");
       else console.log("Connected!");
 
-      console.log(_.map([1, 2, 3], function(num){ return num * 3; }));//using map function
+      
     });
   // modelLogin.a(modelLogin.pandy.name)
 console.log("kisna");
