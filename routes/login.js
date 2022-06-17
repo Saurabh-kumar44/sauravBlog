@@ -10,7 +10,7 @@ var mysql = require('mysql');
 
 //Making connection to mysql
 // setting up host,user,name to sql 
-con.connect()
+// con.connect();
 var con = mysql.createConnection({
  host: "192.168.17.44",
  user: "root",
