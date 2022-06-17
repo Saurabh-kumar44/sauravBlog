@@ -13,60 +13,84 @@ var mysql = require('mysql');
 // setting up host,user,name to sql 
 // con.connect();
 var con = mysql.createConnection({
- host: "192.168.17.44",
- user: "root",
- password: "1234"
+  host: "easylearning.guru",
+  user: "kcc_student",
+  password: "Kccitm.edu.in1",
+  database: " kccStudent"
 });
 
  
-router.get('/', function(req, res, next) {
-  console.log("saurabh");
-  con.connect(function(err) {
-      console.log("HARSH")
-      if (err) console.log("err");
-      else console.log("Connected!");
-
-      
-    });
-  // modelLogin.a(modelLogin.pandy.name)
-console.log("kisna");
-console.log("SIR");
-console.log("Butti");
+router.get('/', function(req, res) {
   res.render('login');
+con.connect(function (err) {
+   if (err) console.log("err");
+   else console.log("Connected!");
+  
+   
+});
+  // modelLogin.a(modelLogin.pandy.name)
+// console.log("kisna");
+// console.log("SIR");
+// console.log("Butti");
+//   res.render('login');
 });
 
 //Inserting into mysql DB
-router.post('/getLogin', function(req, res, next) {
-  console.log(req.body)
-  // res.send({"name":"himani"})
-  //res.render('teacher')
-  console.log(req.body.pass)
-  var sql = "INSERT INTO `login` (`email`, `pass`) \
-  VALUES ('"+req.body.Ashu+"', '"+req.body.pass+"');"
+router.all('/insert', function(req, res) {
+  var sql = "INSERT INTO `SAURABHV` (`lname`, `fname`) \
+  VALUES ('"+req.body.lname+"','"+req.body.fname+"');"
   console.log(sql)
- con.connect()
-    con.query(sql, function (err, result) {
-      if (err) throw err;
-      console.log(result);
-
-    });
-res.json({"Name":req.body})
+  con.connect(
+     con.query(sql,function(err,result){
+        console.log(result);
+     })
+  );
+  
 });
+
+var pool = mysql.createPool({
+  connectionLimit: 10,
+  host : 'easylearning.guru',
+  user :  'kcc_student',
+  password : 'Kccitm.edu.in1',
+  database : 'kccStudent'
+});
+
+router.get('/read', function(req, res) {
+  pool.getConnection(function (err,connection){
+     connection.query("SELECT * FROM SAURABHV",function(err,rows){
+        connection.release();
+        if(err) throw err;
+
+        console.log(rows.length);
+        res.send(JSON.stringify(rows));
+     });
+  });
+ 
+});
+
+
+
 
 
 /* GET home page. */
-router.get('/', function(req, res) {
-//   console.log(req);
-console.log("I am fine")
+// router.get('/', function(req, res) {
+// //   console.log(req);
+// console.log("I am fine")
+//   res.render('login');
+// });
+router.all('/upgateLogin', function(req, res) {
   res.render('login');
+  con.query("")
+ 
 });
 
 // // using by get
-router.get('/getLogin', function(req, res, next) {
-    console.log(req.query);
-    // res.render({"name":"himani"});
-    res.json({"name":req.query.Ashu});
-  });
+// router.get('/getLogin', function(req, res, next) {
+//     console.log(req.query);
+//     // res.render({"name":"himani"});
+//     res.json({"name":req.query.Ashu});
+//   });
 
   //by post
   // router.post('/getLogin', function(req, res, next) {
