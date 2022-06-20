@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ()=>
 //creating function ss
 // export var a = (d)=>{
@@ -17,3 +18,16 @@ var func = {
 }
 
 module.exports = func; 
+=======
+ var a = (d)=>{
+    console.log("Saurave is dating"+d)
+}
+
+// export const pandy={
+//     name:'pandy',
+//     lname:'pandy',
+//     contact:[{phoneNo:98,address:"gali no 420"}]
+// });
+
+module.exports = a;
+>>>>>>> first commit
