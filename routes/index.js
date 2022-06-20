@@ -39,27 +39,40 @@ router.get('/cal',function(req, res){
   res.render('index');
 });
 
-router.all('/cal/add',function(req, res){
-  var x=parseInt(req.body.num1);
-   var  y=parseInt(req.body.num2);
+router.all('/add',function(req, res){
+  console.log("ADDTION")
+  console.log(req.body)
+  var x=parseInt(req.query.num1);
+   var  y=parseInt(req.query.num2);
     var result=x+y;
-  res.render('index',result);
+    console.log(result);  
 });
 
-router.all('/cal/sub',function(req, res){
-  var x=parseInt(req.body.num1);
-    var y=parseInt(req.body.num2);
-    var resutl=x-y;
-  res.render('index',result);
+router.all('/sub',function(req, res){
+  console.log("SUBTRACTION")
+  console.log(req.body)
+  var x=parseInt(req.query.num1);
+   var  y=parseInt(req.query.num2);
+    var result=x-y;
+    console.log(result);  
 });
 
-router.all('/cal/mul',function(req, res){
-  var x=parseInt(req.body.num1);
-    var y=parseInt(req.body.num2);
+router.all('/mul',function(req, res){
+  console.log("MULTIPLICATION")
+  console.log(req.body)
+  var x=parseInt(req.query.num1);
+   var  y=parseInt(req.query.num2);
     var result=x*y;
+<<<<<<< HEAD
   res.render('index',result);
 >>>>>>> first commit
+=======
+    console.log(result);  
+>>>>>>> Loading data by AJAX
 });
+
+
+
 
 
 module.exports = router;

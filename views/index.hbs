@@ -9,7 +9,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>CALCULATOR</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
@@ -28,69 +27,46 @@
 </head>
 
 <body>
-    <form  method="post">
+    <form>
         <fieldset>
             <legend>Calulator</legend>
-            <section class="num-con"> <label> Number 1</label><input type="number" class="num1" name="num1"><br></section>
-            <section calss="num-con"><label> Number 2</label><input type="number" class="num2" name="num2"><br></section>
-            <button id="add">ADD</button> <button id="sub">SUB</button><button id="mul">MULTIPLY</button><br>
+            <section class="num-con"> <label> Number 1</label><input type="number" class="num1" name="num1"
+                    id="num1"><br></section>
+            <section calss="num-con"><label> Number 2</label><input id="num2" type="number" class="num2"
+                    name="num2"><br></section>
+            <button id="1" class="add">ADD</button>
+            <button id="2" class="sub">SUB</button>
+            <button id="3" class="mul">MULTIPLY</button><br>
+            <br>
             <label>ANSWER</label>
             <div id="ans" class="num-con">{{result}}</div>
         </fieldset>
     </form>
     <script>
-
-        {{!-- $(document).ready(function () {
-            $("#add").on('click', function () {
-                Add();
+        $(document).ready(() => {
+            $(".add").click(function (event) {
+                event.preventDefault()//uses to preventDefault functionality of event
+                console.log($(".num1").val())
+                console.log($(".num2").val())
+                $.post({ url: "/add", data: {data:[$(".num1").val(), $(".num2").val()]} });
             });
-            $("#sub").on('click', function () {
-                Substract();
-            })
-            $("#mul").on('click', function () {
-                Multiply();
-            })
-        });
+        })
 
-        function Add() {
-            var no1 = parseInt($(".num1").val());
-            var no2 = parseInt($(".num2").val());
-            var result = no1 + no2;
-            $("#ans").html(result);
-        }
-        function Substract() {
-            var no1 = parseInt($(".num1").val());
-            var no2 = parseInt($(".num2").val());
-            var result = no1 - no2;
-            $("#ans").html(result);
-        }
-        function Multiply() {
-            var no1 = parseInt($(".num1").val());
-            var no2 = parseInt($(".num2").val());
-            var result = no1 * no2;
-            $("#ans").html(result);
-        }    
+        $(".sub").click(function (event) {
+            event.preventDefault();
+            console.log($(".num1").val())
+            console.log($(".num2").val())
+            $.post({url: "/sub", data:{data:[$(".num1").val(), $(".num2").val()]} });
+        })
 
-} --}}
+           $(".mul").click(function (event) {
+            event.preventDefault();
+            console.log($(".num1").val())
+            console.log($(".num2").val())
+            $.post({url: "/mul", data:{data:[$(".num1").val(), $(".num2").val()]} });
+        })
 
-$("#add").click(function(){
-  $.ajax({url: "index/cal/add"){
-    location.reload();
-  }});
-});
 
-$("#sub").click(function(){
-  $.ajax({url: "index/cal/sub"){
-    location.reload();
-  }});
-});
-
-$("#mul").click(function(){
-  $.ajax({url: "index/cal/mul"){
-     location.reload();
-  }});
-});
-      
 
     </script>
 </body>
