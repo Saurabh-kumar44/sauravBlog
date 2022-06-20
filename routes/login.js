@@ -79,13 +79,14 @@ var con = mysql.createConnection({
 
 /* GET home page. */
 router.get('/', function(req, res) {
+   
      res.render('login');
-   con.connect(function (err) {
-      if (err) console.log("err");
-      else console.log("Connected!");
-     
+    con.connect(function (err) {
+    if (err) console.log("err");
+     else console.log("Connected!");
+     s
       
-   });
+ });
 });
 
 
