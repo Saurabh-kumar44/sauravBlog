@@ -25,6 +25,11 @@ router.get('/', function(req, res) {
 con.connect(function (err) {
    if (err) console.log("err");
    else console.log("Connected!");
+<<<<<<< HEAD
+=======
+  
+   
+>>>>>>> 7ecf70b75eefc6260e49555831411f03df3898b3
 });
   // modelLogin.a(modelLogin.pandy.name)
 // console.log("kisna");
@@ -35,8 +40,13 @@ con.connect(function (err) {
 
 //Inserting into mysql DB
 router.all('/insert', function(req, res) {
+<<<<<<< HEAD
   var sql = "INSERT INTO `SAURABHV` (`email`, `pass`) \
   VALUES ('"+req.body.fname+"','"+req.body.lname+"');"
+=======
+  var sql = "INSERT INTO `SAURABHV` (`lname`, `fname`) \
+  VALUES ('"+req.body.lname+"','"+req.body.fname+"');"
+>>>>>>> 7ecf70b75eefc6260e49555831411f03df3898b3
   console.log(sql)
   con.connect(
      con.query(sql,function(err,result){
