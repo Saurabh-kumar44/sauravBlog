@@ -10,74 +10,58 @@
 </head>
 
 <body>
-    {{!-- <form action="/getLogin" method="get"> --}}
-        {{!-- renderng by get --}}
-        {{!-- <form action="/login/getLogin" method="get"> --}}
-            {{!-- by post --}}
-            {{!-- <form action="/login/getLogin" method="post">
-
-                <input type="email" name="email" id="" placeholder="email">
-                <input type="password" name="password" id="" placeholder="pass">
-                <input type="submit">
+    <form action="/login/getLogin" method="POST">
+        <input type="email" name="email" placeholder="email"id="">
+        <input type="password" name="pass"placeholder="password" id="">
+        <input type="submit" value="submit">
+    </form>
+    <button id="click">Press Me</button>
 
 
-            </form> --}}
-            <button class="click">Press me</button>
-            <table>
-                <tr>
-                    <td>Id</td>
-                    <td>Name</td>
-                    <td>Update</td>
-                    <td>Delete</td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    {{!-- {{#data}} --}}
-                    <form action="/login/updateLogin" method="post">
-                        <input type="text" name="id" id="" value="{{id}}"> </td> <br>
-                        <td><input type="text" name="name"  value="{{name}}"> <br>
-                        <td><button type="button" class="btn-update" placeholder id ="{{id}}"="Update">update</button></td>
-                        <td><button type="button" class="btn-Delete" placeholder="Delete" id ="{{id}}>Delete</button></td>
-                        <td><input type="submit"></td>
-                    </form>
-                </tr>
-                {{!-- {{/data}} --}}
-            </table>
+    <tr>
+        {{!-- {{#data}} --}}
+        {{!-- <form action="/login/insert" method="post" class="{{id}}">
+            <input type="id" name="id" value="{{id}}"><br>
+            <input type="email" name="fname" value="{{fname}}">Email<br>
+            <input type="name" name="lname" value="{{lname}}">Name<br>
+            <input type="text" name="address" value="{{address}}"><br>
+            <input type="text" name="city" value="{{city}}"><br>
+            <input type="submit" value="submit"> --}}
+            {{!-- <button name="update" class="btn-update" aria-placeholder="Update">Update</button><br>
+            <button name="delete" class="btn-delete">Delete</button><br> --}}
+        </form>
+        {{!-- {{/data}} --}}
+    </tr>
 
 
-            <div id="div1"></div>
-            <script>
-                {
-                    {
-                        {
-                            !--$("button").click(function () {
-                                console.log("Apko  mera pranam")
-                                console.log(event);
-                            }); --}
-                    }
 
-                    $("btn-uptate").click(function () {
-                        console.log("Apko  mera pranam")
-                        console.log(event);
-                    });
 
+    <script>
+
+        {{!-- {
+            {
+                $("button").click(function () {
+                    console.log("Jai Shree Ram")
+                })
+        }
+        } --}}
+        $("button").click(function () {
+            $.ajax({
+                url: "https://api.publicapis.org/entries", success: function (result) {
+                    { { !--$("#div1").html(result); --} }
+                    console.log(result);
                 }
-
-
-
-                {
-                    {
-                        !--$("button").click(function () {
-                            $.ajax({
-                                url: "https://api.publicapis.org/entries", success: function (result) {
-                                    { { !--$("#div1").html(result); --} }
-                                    console.log(result);
-                                }
-                            });
-                        }); --}
-                }
-            </script>
+            });
+        });
+        { { !--to update data-- } }
+        $(".btn-update").click(() => {
+            console.log("Update" + event.target.id)
+        });
+        {{!-- to delete data --}}
+        $(".btn-delete").click(() => {
+            console.log("Deleted" + event.target.id)
+        });
+    </script>
 </body>
 
 </html>
