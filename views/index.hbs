@@ -38,7 +38,7 @@ HEAD
             <button id="3" class="mul">MULTIPLY</button><br>
             <br>
             <label>ANSWER</label>
-            <div id="ans" class="num-con">{{result}}</div>
+            <div id="ans" class="num-con"></div>
         </fieldset>
     </form>
     <script>
@@ -47,7 +47,13 @@ HEAD
                 event.preventDefault()//uses to preventDefault functionality of event
                 console.log($(".num1").val())
                 console.log($(".num2").val())
-                $.post({ url: "/add", data: {a:$(".num1").val(), b:$(".num2").val()}  });
+                $.post({ url: "/add", data: {a:$(".num1").val(), b:$(".num2").val()}}).then((data)=>{
+console.log(data);
+
+{{!-- $("#ans").append("<p>"+"you are idiots"+"<p>"); --}}
+    {{!-- $("#ans").append("<p>"+data+"<p>"); --}}
+        $("#ans").append('<div>' + data + '</div>');
+                });
             });
         })
         

@@ -28,7 +28,7 @@ router.all('/add',function(req, res){
   var y =parseInt(req.body.b);
   var result =x+y;
   console.log(result);
-  res.json({result});
+  res.json(result);
 });
 
 router.all('/sub',function(req, res){
@@ -38,7 +38,7 @@ router.all('/sub',function(req, res){
   var y =parseInt(req.body.b);
   var result =x-y;
   console.log(result);
-  res.json({result});
+  res.json(result);
 });
 
 router.all('/mul',function(req, res){
@@ -48,7 +48,7 @@ router.all('/mul',function(req, res){
   var y =parseInt(req.body.b);
   var result =x*y;
   console.log(result);
-  res.json({result});
+  res.json(result);
 
 });
 
