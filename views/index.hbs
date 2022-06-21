@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+HEAD
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +47,9 @@
                 event.preventDefault()//uses to preventDefault functionality of event
                 console.log($(".num1").val())
                 console.log($(".num2").val())
-                $.post({ url: "/add", data: {data:[$(".num1").val(), $(".num2").val()]} });
+                $.post({ url: "/add", data: {data:[$(".num1").val(), $(".num2").val()]} , function(data){
+                    $("#ans").html(data)
+                } });
             });
         })
         
@@ -72,4 +73,4 @@
 </body>
 
 </html>
->>>>>>> first commit
+

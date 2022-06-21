@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const { getEmailSend } = require("../service/service");
 
 var func = {
@@ -10,7 +9,6 @@ var func = {
 }
 
 module.exports = func; 
-=======
 const req = require("express/lib/request");
 var express = require('express');
 
@@ -20,4 +18,3 @@ var func = {
     }
 }
 module.exports =func;
->>>>>>> first commit

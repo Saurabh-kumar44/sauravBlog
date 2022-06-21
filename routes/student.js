@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-<<<<<<< HEAD
+
 // router.get('/data', function(req, res, next) {
 //   console.log(req);//print the req
 //   res.json({name:"Saurav"}); //send the response to the server basically a (Get request) 
@@ -18,7 +18,7 @@ var router = express.Router();
 
 
 module.exports = router;
-=======
+
 router.get('/data', function(req, res) {
   // res.render('index', { title: 'Express' });
   console.log(req);
@@ -51,4 +51,4 @@ router.get('/:da/:ta', function(req, res) {
   
 });
 module.exports = router;
->>>>>>> first commit
+

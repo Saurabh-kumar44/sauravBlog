@@ -5,11 +5,8 @@
  */
 
 var app = require('../app');
-<<<<<<< HEAD
 var debug = require('debug')('myblog:server');
-=======
-var debug = require('debug')('blogapp:server');
->>>>>>> first commit
+
 var http = require('http');
 
 /**

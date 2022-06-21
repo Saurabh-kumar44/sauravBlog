@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ()=>
 //creating function ss
 // export var a = (d)=>{
@@ -18,7 +17,6 @@ var func = {
 }
 
 module.exports = func; 
-=======
  var a = (d)=>{
     console.log("Saurave is dating"+d)
 }
@@ -30,4 +28,4 @@ module.exports = func;
 // });
 
 module.exports = a;
->>>>>>> first commit
+
