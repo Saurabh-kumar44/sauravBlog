@@ -47,9 +47,7 @@ HEAD
                 event.preventDefault()//uses to preventDefault functionality of event
                 console.log($(".num1").val())
                 console.log($(".num2").val())
-                $.post({ url: "/add", data: {data:[$(".num1").val(), $(".num2").val()]} , function(data){
-                    $("#ans").html(data)
-                } });
+                $.post({ url: "/add", data: {a:$(".num1").val(), b:$(".num2").val()}  });
             });
         })
         
@@ -57,20 +55,18 @@ HEAD
             event.preventDefault();
             console.log($(".num1").val())
             console.log($(".num2").val())
-            $.post({url: "/sub", data:{data:[$(".num1").val(), $(".num2").val()]} });
+             $.post({ url: "/sub", data: {a:$(".num1").val(), b:$(".num2").val()}  });
         })
 
            $(".mul").click(function (event) {
             event.preventDefault();
             console.log($(".num1").val())
             console.log($(".num2").val())
-            $.post({url: "/mul", data:{data:[$(".num1").val(), $(".num2").val()]} });
+             $.post({ url: "/mul", data: {a:$(".num1").val(), b:$(".num2").val()}  });
         })
-
 
 
     </script>
 </body>
 
 </html>
-
