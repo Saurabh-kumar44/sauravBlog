@@ -1,6 +1,6 @@
-HEAD
+{{!-- HEAD
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<p>Welcome to {{title}}</p> --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +22,14 @@ HEAD
             margin-top: 10px;
             margin-bottom: 10px;
         }
+        fieldset,table,tr{
+            margin-left: 350px;
+            border: solid 1px rgb(62, 4, 4)
+        }
+        #ans{
+            display: inline;
+        }
+        
     </style>
 </head>
 
@@ -37,14 +45,30 @@ HEAD
             <button id="2" class="sub">SUB</button>
             <button id="3" class="mul">MULTIPLY</button><br>
             <br>
-            <label>ANSWER</label>
-            <div id="ans" class="num-con"></div>
+            {{!-- <label>ANSWER</label> --}}
+            <b id="ans" class="num-con"></b>
         </fieldset>
     </form>
+<table>
+  <tr>
+    <th>NUMBER 1</th>
+    <th>NUMBER 2</th>
+    <th>ARITHMETIC OPRATION</th>
+    <th>UTTAR</th>
+  </tr>
+  <tr>
+    <td class="n1"></td>
+    <td class="n2"></td>
+    <td class="o3"></td>
+    <td class="r3"></td>
+  </tr>
+</table>
     <script>
         $(document).ready(() => {
             $(".add").click(function (event) {
                 event.preventDefault()//uses to preventDefault functionality of event
+                var p = $('.num1').val()
+                var q = $('.num2').val()
                 console.log($(".num1").val())
                 console.log($(".num2").val())
                 $.post({ url: "/add", data: {a:$(".num1").val(), b:$(".num2").val()}}).then((data)=>{
@@ -52,7 +76,11 @@ console.log(data);
 
 {{!-- $("#ans").append("<p>"+"you are idiots"+"<p>"); --}}
     {{!-- $("#ans").append("<p>"+data+"<p>"); --}}
-        $("#ans").append('<p>' + data + '</p>');
+        {{!-- $("#ans").append('<b>' + "ADD->RESULT :"+ data + '</b>'); --}}
+            $(".n1").append('<p>'+p+'</p>');
+        $(".n2").append('<p>'+q+'</p>');
+        $(".o3").append('<p>+</p>');
+        $(".r3").append('<p>'+data+'</p>');
                 });
             });
         })
@@ -60,14 +88,19 @@ console.log(data);
          $(document).ready(() => {
             $(".sub").click(function (event) {
                 event.preventDefault()//uses to preventDefault functionality of event
+                 var p = $('.num1').val()
+                var q = $('.num2').val()
                 console.log($(".num1").val())
                 console.log($(".num2").val())
                 $.post({ url: "/sub", data: {a:$(".num1").val(), b:$(".num2").val()}}).then((data)=>{
 console.log(data);
 
 {{!-- $("#ans").append("<p>"+"you are idiots"+"<p>"); --}}
-    {{!-- $("#ans").append("<p>"+data+"<p>"); --}}
-        $("#ans").append('<p>' + data + '</p>');
+        {{!-- $("#ans").append('<p>'+"SUB->RESULT :" + data + '</p>'); --}}
+        $(".n1").append('<p>'+p+'</p>');
+        $(".n2").append('<p>'+q+'</p>');
+        $(".o3").append('<p>-</p>');
+        $(".r3").append('<p>'+data+'</p>');
                 });
             });
         })
@@ -75,14 +108,19 @@ console.log(data);
            $(document).ready(() => {
             $(".mul").click(function (event) {
                 event.preventDefault()//uses to preventDefault functionality of event
+                 var p = $('.num1').val()
+                var q = $('.num2').val()
                 console.log($(".num1").val())
                 console.log($(".num2").val())
                 $.post({ url: "/mul", data: {a:$(".num1").val(), b:$(".num2").val()}}).then((data)=>{
 console.log(data);
 
 {{!-- $("#ans").append("<p>"+"you are idiots"+"<p>"); --}}
-    {{!-- $("#ans").append("<p>"+data+"<p>"); --}}
-        $("#ans").append('<p>' + data + '</p>');
+        {{!-- $("#ans").append('<p>' +"MUL->RESULT :" + data + '</p>'); --}}
+            $(".n1").append('<p>'+p+'</p>');
+        $(".n2").append('<p>'+q+'</p>');
+        $(".o3").append('<p>*</p>');
+        $(".r3").append('<p>'+data+'</p>');
                 });
             });
         })
