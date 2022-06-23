@@ -8,12 +8,11 @@ var _ = require('underscore');
 
 var modelLogin = require("../model/login");//calling file or exporting from lgin
 const { getLoginPost } = require('../controller/controller');
+// router.get('/',function(req,res){
+//    modelLogin("unknown")
+//    res.render('login');
 
-router.get('/',function(req,res){
-   modelLogin("unknown")
-   res.render('login');
-
-});
+// });
 
 //Making connection to mysql
 //setting up host user,name,to sql
@@ -25,22 +24,16 @@ var con = mysql.createConnection({
  });
 
 
-
-
-
-
 /* GET home page. */
-// router.get('/', function(req, res) {
-//      res.render('login');
-//    con.connect(function (err) {
-//       if (err) console.log("err");
-//       else console.log("Connected!");
+router.get('/', function(req, res) {
+     res.render('login');
+   con.connect(function (err) {
+      if (err) console.log("err");
+      else console.log("Connected!");
      
       
-//    });
-// });
-
-
+   });
+});
 
 
 // router.get('/getLogin', function(req, res) {
@@ -69,7 +62,7 @@ var pool = mysql.createPool({
 
 router.get('/read', function(req, res) {
    pool.getConnection(function (err,connection){
-      connection.query("SELECT * FROM SHIVAMP",function(err,rows){
+      connection.query("SELECT * FROM data",function(err,rows){
          connection.release();
          if(err) throw err;
 
@@ -81,18 +74,18 @@ router.get('/read', function(req, res) {
 });
 
 
-router.all('/insert', function(req, res) {
-  var sql = "INSERT INTO `SHIVAMP` (`lname`, `fname`) \
-  VALUES ('"+req.body.lname+"','"+req.body.fname+"');"
-  console.log(sql)
-  con.connect(
-     con.query(sql,function(err,result){
-        console.log(result);
-     })
-  )
-  
+router.post('/insert', function(req, res, next) {
+   console.log(req.body)
+   pool.getConnection(function (err,connection){
+      connection.query("INSERT INTO `SAURABHV` (`Email`,`Password`) VALUES ('"+req.body.email+"','"+req.body.password+"')",function(err,rows){
+         connection.release();
+         if(err) throw err;
+         else console.log(rows.length);
+      });
+     });
+    
+res.json({"Name":req.body})
 });
-
 
  router.all('/upgateLogin', function(req, res) {
    res.render('login');

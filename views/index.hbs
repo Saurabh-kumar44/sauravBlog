@@ -11,6 +11,7 @@
     <title>CALCULATOR</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
+
         .add,
         .sub,
         .mul {
@@ -22,9 +23,13 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
+        table{
+            text-align: center;
+        }
         fieldset,table,tr{
             margin-left: 350px;
-            border: solid 1px rgb(62, 4, 4)
+            border: solid 1px rgb(62, 4, 4);
+            
         }
         #ans{
             display: inline;
@@ -63,6 +68,8 @@
     <td class="r3"></td>
   </tr>
 </table>
+{{#rows}}
+{{/rows}}
     <script>
         $(document).ready(() => {
             $(".add").click(function (event) {
