@@ -1,0 +1,6 @@
+CREATE TABLE RESULT1(
+    NUM1 int,
+    NUM2 int,
+    OPERATION VARCHAR(250),
+    RESULT int
+);
